@@ -17,12 +17,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run hadolint
-        uses: hadolint/hadolint-action@v1
+        run: docker run --rm -i hadolint/hadolint:v1.17.5-alpine < Dockerfile
   SuperCalculator3:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
       - name: Install dependencies
         run: npm install
       - name: Build application
