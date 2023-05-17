@@ -1,1 +1,10 @@
+builds:
+- env:
+    - GO111MODULE=on
+  goos:
+    - windows
+    - linux
+    - darwin
+  binary:
+    - myapp
 
