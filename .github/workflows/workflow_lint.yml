@@ -17,7 +17,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Run hadolint
-        run: docker run --rm -i hadolint/hadolint:v1.17.5-alpine < Dockerfile_path
+        run: docker run --rm -i hadolint/hadolint:v1.17.5-alpine < docker
+
   SuperCalculator3:
     runs-on: ubuntu-latest
     steps:
