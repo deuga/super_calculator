@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "commande-de-test"
+    "test": "npm test"
   },
   "dependencies": {
-    "nom-de-la-dépendance": "version"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "nom-de-la-dépendance-dev": "version"
+    "mocha": "^9.0.0"
   },
-  "author": "votre-nom",
-  "license": "type-de-licence"
+  "author": "ulrich",
+  "license": "MIT"
 }
 
