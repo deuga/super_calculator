@@ -1,1 +1,30 @@
+name: Release Workflow
+on:
+  create:
+    tags:
+      - '*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.16
+
+    - name: Run goreleaser
+      run: |
+        go get github.com/goreleaser/goreleaser
+        goreleaser release --rm-dist
+
+    - name: Upload release artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: Release Artifacts
+        path: dist/
 
