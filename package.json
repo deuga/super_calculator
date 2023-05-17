@@ -1,1 +1,19 @@
+{
+  "name": "super_calculator",
+  "version": "1.0.0",
+  "description": "projet pour la calculatrice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "commande-de-test"
+  },
+  "dependencies": {
+    "nom-de-la-dépendance": "version"
+  },
+  "devDependencies": {
+    "nom-de-la-dépendance-dev": "version"
+  },
+  "author": "votre-nom",
+  "license": "type-de-licence"
+}
 
