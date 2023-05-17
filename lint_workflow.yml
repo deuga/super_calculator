@@ -1,1 +1,7 @@
+name: Lint Workflow
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
 
