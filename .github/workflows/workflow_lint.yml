@@ -1,0 +1,37 @@
+name: Lint Workflow
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run semgrep
+        uses: returntocorp/semgrep-action@v1
+  hadolint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run hadolint
+        uses: hadolint/hadolint-action@v1
+  SuperCalculator3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Build application
+        run: npm run build
+  super-linter:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
